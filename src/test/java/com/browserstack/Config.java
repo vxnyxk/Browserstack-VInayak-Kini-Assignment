@@ -51,8 +51,7 @@ public String translateText(String text) throws Exception {
     OkHttpClient client = new OkHttpClient();
 
     MediaType mediaType = MediaType.parse("application/json");
-    RequestBody body = RequestBody.create(mediaType, "{\"from\":\"en\",\"to\":\"ar\",\"q\":\"Hello ! Rapid Translate Multi Traduction\"}");
-    Request request = new Request.Builder()
+    RequestBody body = RequestBody.create(mediaType, "{\"from\":\"es\",\"to\":\"en\",\"q\":\"" + text + "\"}");    Request request = new Request.Builder()
 	    .url("https://rapid-translate-multi-traduction.p.rapidapi.com/t")
 	    .post(body)
 	    .addHeader("x-rapidapi-key", "5245ca962cmshe0eb27367b4f6ddp13729ajsn14cef7031a66")
