@@ -3,6 +3,7 @@ package com.browserstack;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 //import browserstack.shaded.okhttp3.OkHttpClient;
 //import browserstack.shaded.okhttp3.RequestBody;
 //import browserstack.shaded.okhttp3.Request;
@@ -31,7 +32,7 @@ public class Config {
     @BeforeMethod(alwaysRun = true)
     //@SuppressWarnings("unchecked")
     public void setUp() throws Exception {
-        // Set the path to the ChromeDriver executable
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://elpais.com/");

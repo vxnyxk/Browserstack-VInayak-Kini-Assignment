@@ -29,7 +29,9 @@ import org.testng.annotations.Test;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class BSassignment extends Config {
     @Test(description = "Visit the website El País, a Spanish news outlet Ensure that the website's text is displayed in Spanish.")
@@ -95,7 +97,42 @@ public class BSassignment extends Config {
         }
     }
 
-       
+    @Test(description = "Analyze Translated Headers + From the translated headers, identify any words that are repeated more than twice across all headers combined. + Print each repeated word along with the count of its occurrences.")
+    public void Fourth_case() throws Exception {
+        driver.findElement(By.xpath("//*[@id='csw']/div[1]/nav/div/a[2]")).click();
+
+         // This will Fetch the first five articles
+        List<WebElement> articles = driver.findElements(By.cssSelector("article"));
+        Map<String, Integer> wordCount = new HashMap<>();
+        for (int i = 0; i < Math.min(articles.size(), 5); i++) {
+            WebElement article = articles.get(i);
+            String title = article.findElement(By.cssSelector("h2")).getText();
+            //String content = article.findElement(By.cssSelector("p")).getText();
+  
+            String translatedTitle = translateText(title);
+            System.out.println("Translated Title: " + translatedTitle);
+            String[] words = translatedTitle.split("\\s+");
+        for (String word : words) {
+            word = word.toLowerCase(); // Convert to lowercase to count words case-insensitively
+            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
+        }
     }
+
+    // Print words that are repeated more than twice
+        System.out.println("Repeated Words:");
+        for (Map.Entry<String, Integer> entry : wordCount.entrySet()) {
+        if (entry.getValue() > 2) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+            }
+        }
+
+    }  
+}
+
+
+
+
+
+       
 
 
