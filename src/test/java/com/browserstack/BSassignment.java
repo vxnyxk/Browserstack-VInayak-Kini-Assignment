@@ -1,24 +1,3 @@
-/*package com.browserstack;
-
-import com.browserstack.Config;
-import org.openqa.selenium.By;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-
-public class BSassignment extends Config {
-    @Test(description = "Visit the website El País, a Spanish news outlet Ensure that the website's text is displayed in Spanish.")
-    public void First_case() throws Exception 
-    {
-        String pageText = driver.findElement(By.tagName("body")).getText();
-        Assert.assertTrue(pageText.contains("Seleccione") || pageText.contains("Actualizado"), "The website text is not in Spanish");
-    }
-
-    @Test(description = "Scrape Articles from the Opinion Section:Navigate to the Opinion section of the website.,Fetch the first five articles in this section.,Print the title and content of each article in Spanish.If available, download and save the cover image of each article to your local machine.") 
-    public void Second_case() throws Exception {
-        driver.findElement(By.xpath("//*[@id=\"csw\"]/div[1]/nav/div/a[2]")).click();
-        
-    }
-}*/
 package com.browserstack;
 
 import org.openqa.selenium.By;
@@ -74,7 +53,7 @@ public class BSassignment extends Config {
             }
         }
     }
-    @Test(description = "")
+    @Test(description = "Analyze Translated Headers: From the translated headers, identify any words that are repeated more than twice across all headers combined.Print each repeated word along with the count of its occurrences.")
     public void Third_case() throws Exception {
         // Navigate to the Opinion section
         driver.findElement(By.xpath("//*[@id='csw']/div[1]/nav/div/a[2]")).click();
