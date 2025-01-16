@@ -54,7 +54,7 @@ public class Config {
         OkHttpClient client = new OkHttpClient();
 
         MediaType mediaType = MediaType.parse("application/json");
-        RequestBody body = RequestBody.create(mediaType, "{\"from\":\"en\",\"to\":\"ar\",\"q\":\"Hello ! Rapid Translate Multi Traduction\"}");
+        RequestBody body = RequestBody.create(mediaType, "{\"from\":\"es\",\"to\":\"en\",\"q\":\"" + text + "\"}");
         Request request = new Request.Builder()
 	        .url("https://rapid-translate-multi-traduction.p.rapidapi.com/t")
 	        .post(body)
