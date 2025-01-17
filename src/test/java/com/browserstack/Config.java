@@ -22,8 +22,11 @@ public class Config {
 	//Running perfectly locally thats why commented the Browserstack code
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
-       /* System.out.println("BrowserStack Username: " + System.getenv("vinayakkini_GnuNQT"));
-        System.out.println("BrowserStack Access Key: " + System.getenv("j2rEBb3aSMHegWepz67j"));
+       /* 
+        String username = System.getenv("vinayakkini_GnuNQT");
+        String accessKey = System.getenv("j2rEBb3aSMHegWepz67j");
+        System.out.println(username);
+        System.out.println(accessKey);
         //if (username == null || accessKey == null) {
             //throw new IllegalArgumentException("BrowserStack credentials are not set in environment variables.");
         //}
