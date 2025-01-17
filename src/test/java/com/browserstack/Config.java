@@ -19,6 +19,7 @@ import java.io.IOException;
 public class Config {
     public WebDriver driver;
 //Tried Running in Browserstack env but it was throwing Unable to parse remote response: Authorization required contacted TS
+	//Running perfectly locally 
     @BeforeMethod(alwaysRun = true)
     public void setUp() throws Exception {
        /* System.out.println("BrowserStack Username: " + System.getenv("vinayakkini_GnuNQT"));
